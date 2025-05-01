@@ -1,0 +1,139 @@
+body {
+    font-family: sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.circular-slide {
+    background: radial-gradient(#fdb76d, #f08a00);
+    height: 40em;
+    min-height: 100vh;
+    padding: 1em 2em 0em 2em;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.text:not(:nth-child(3)) {
+    display: none;
+}
+
+.image img:not(:nth-child(3)) {
+    opacity: 0;
+}
+
+.text h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
+}
+
+.text p {
+    max-width: 550px;
+    line-height: 30px;
+    margin: 0 auto;
+}
+
+.slide {
+    position: absolute;
+    bottom: -22em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image {
+    position: relative;
+    width: 70vw;
+    height: 70vw;
+    max-width: 600px;
+    max-height: 600px;
+    transition: 300ms;
+}
+
+.slide img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    transition: opacity 300ms;
+}
+
+.indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vw;
+    max-width: 700px;
+    max-height: 700px;
+    border: 2px #fff solid;
+    border-radius: 50%;
+    transition: transform 300ms;
+}
+
+.indicator::before {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    left: 50%;
+    transform: translate(-50%);
+    width: 1em;
+    height: 1em;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.menu, .menu div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85vw;
+    height: 85vw;
+    max-width: 750px;
+    max-height: 750px;
+    border-radius: 50%;
+}
+
+.menu span {
+    position: absolute;
+    top: -1em;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    transition: 200ms;
+    text-align: center;
+}
+
+.menu span:hover {
+    color: #ccc;
+}
+
+.menu div:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(-59deg);
+}
+.menu div:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-32deg);
+}
+.menu div:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-0deg);
+}
+.menu div:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(32deg);
+}
+.menu div:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(59deg);
+}
+
+@media screen and (max-width: 800px) {
+    .slide {
+        bottom: -40vw;
+    }
+}
